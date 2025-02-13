@@ -39,5 +39,7 @@ cmake-build-debug/
 .cache/
 
 *.inp
+.vs/
+out/
 .idea/
 bin/
