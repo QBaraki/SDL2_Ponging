@@ -1,13 +1,13 @@
 cmake_minimum_required(VERSION 3.30)
 project(Ponging VERSION 0.1.0)
 
-set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_COMPILER "g++")
 set(CMAKE_GENERATOR "MinGW Makefiles" CACHE STRING "Generator for CMake")
 set(OUTPUT_DIR "${CMAKE_SOURCE_DIR}/bin/${CMAKE_BUILD_TYPE}")
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${OUTPUT_DIR}")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${OUTPUT_DIR}")
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${OUTPUT_DIR}")
+
+include_directories("src")
 
 file(GLOB_RECURSE cpp_files ${PROJECT_SOURCE_DIR}/src/*.cpp)
 file(GLOB_RECURSE header_files

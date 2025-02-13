@@ -1,12 +1,14 @@
-#include <SDL2/SDL.h>
 #include <iostream>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_ttf.h>
+#include "game.h"
 
 int main(int argc, char* argv[]) {
-  if (SDL_Init(SDL_INIT_VIDEO) < 0) {
-    std::cout << "SDL_Init Error: " << SDL_GetError() << std::endl;
-    return -1;
+  Game game;
+  try {
+    game.InitGameLoop();
+  } catch (std::runtime_error err) {
+    SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "An error occurred", err.what(), NULL);
   }
-  std::cout << "SQL_Init completed!\n";
-  SDL_Quit();
   return 0;
 }
