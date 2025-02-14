@@ -7,7 +7,7 @@ Player::Player(SDL_Renderer* renderer_, bool which_player) {
   if (!which_player) {  // Left player.
     paddle = new Paddle(10, 100, Vec2d(10, 0), SDLK_w, SDLK_s, SDLK_c);
   } else {              // Right player.
-    paddle = new Paddle(10, 100, Vec2d(WINDOW_WIDTH - 20, 0), SDLK_w, SDLK_s, SDLK_c);
+    paddle = new Paddle(10, 100, Vec2d(WINDOW_WIDTH - 20, 0), SDLK_UP, SDLK_DOWN, SDLK_RSHIFT);
   }
 }
 
