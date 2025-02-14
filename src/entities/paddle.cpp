@@ -61,7 +61,7 @@ void Paddle::HandlingKeyUp(SDL_Event* event) {
   } else if (!key[0].IsDown && key[1].IsDown) {
     velocity = kSpeed / (key[2].IsDown ? 2.5f : 1.0f);
   }
- }
+}
 
 void Paddle::InputHandler(SDL_Event* event) {
   if (event->type == SDL_KEYDOWN) {
