@@ -9,7 +9,7 @@ class Game {
   SDL_Renderer* renderer;
   TTF_Font* font;
 
-public:
+ public:
   Game();
   ~Game();
   void InitGameLoop();
