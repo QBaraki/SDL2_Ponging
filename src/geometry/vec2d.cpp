@@ -1,7 +1,7 @@
 #include "vec2d.h"
 
 Vec2d::Vec2d() {
-  x = y = 0.0;
+  x = y = 0.0f;
 }
 
 Vec2d::Vec2d(float x_, float y_) {
@@ -9,7 +9,7 @@ Vec2d::Vec2d(float x_, float y_) {
   y = y_;
 }
 
-Vec2d Vec2d::operator=(const Vec2d& other) {
+Vec2d Vec2d::operator+(const Vec2d& other) {
   return Vec2d(x + other.x, y + other.y);
 }
 

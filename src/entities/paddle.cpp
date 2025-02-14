@@ -72,5 +72,5 @@ void Paddle::InputHandler(SDL_Event* event) {
 }
 
 void Paddle::MoveToCenter() {
-  position.y = (WINDOW_HEIGHT - height) / 2.0;
+  position.y = (WINDOW_HEIGHT - height) / 2.0f;
 }
