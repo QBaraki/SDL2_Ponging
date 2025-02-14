@@ -11,6 +11,7 @@ class Match {
   SDL_Renderer* renderer;
   std::vector<Player*> players;
 
+ public:
   Match(SDL_Renderer* renderer_);
   ~Match();
   void Draw();
