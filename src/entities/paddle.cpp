@@ -26,7 +26,7 @@ void Paddle::Draw(SDL_Renderer* renderer) {
 }
 
 void Paddle::Update(float delta_time) {
-  position.y += velocity * delta_time;
+  position.y += key[2].IsDown ? velocity / 2.5f * delta_time : velocity * delta_time;
   if (position.y < 0) {
     position.y = 0;
   } else if (position.y > WINDOW_HEIGHT - height) {
