@@ -5,7 +5,6 @@
 #include "utils/renderer_utils.h"
 
 #include <iostream>
-#include <cmath>
 
 Match::Match(SDL_Renderer* renderer_) {
   renderer = renderer_;

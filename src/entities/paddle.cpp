@@ -11,8 +11,8 @@ Paddle::Paddle(int width_, int height_, Vec2d position_, uint32_t up_bind_, uint
   key[0].binding = up_bind_;
   key[1].binding = down_bind_;
   key[2].binding = slow_bind_;
-  rect.x = static_cast<int>(position_.x);
-  rect.y = static_cast<int>(position_.y);
+  rect.x = static_cast<int>(position.x);
+  rect.y = static_cast<int>(position.y);
   rect.w = width;
   rect.h = height;
   velocity = 0.0f;
@@ -26,11 +26,11 @@ void Paddle::Draw(SDL_Renderer* renderer) {
 }
 
 void Paddle::Update(float delta_time) {
-  position.x += velocity * delta_time;
-  if (position.x < 0) {
-    position.x = 0;
+  position.y += velocity * delta_time;
+  if (position.y < 0) {
+    position.y = 0;
   } else if (position.y > WINDOW_HEIGHT - height) {
-    position.x = WINDOW_HEIGHT - height;
+    position.y = WINDOW_HEIGHT - height;
   }
 }
 
