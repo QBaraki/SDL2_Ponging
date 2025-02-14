@@ -7,4 +7,4 @@ namespace RendererUtils {
   void DrawNet(SDL_Renderer* renderer, int window_width, int window_height);
 }
 
-#endif  // RENDERER_UTILS_H
+#endif  // !RENDERER_UTILS_H

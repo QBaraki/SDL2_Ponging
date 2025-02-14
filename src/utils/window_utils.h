@@ -7,4 +7,4 @@ namespace WindowUtils {
   void Center(SDL_Window* window);
 }
 
-#endif  // WINDOW_UTILS_H
+#endif  // !WINDOW_UTILS_H

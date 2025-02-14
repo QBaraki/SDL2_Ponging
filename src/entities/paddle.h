@@ -28,4 +28,4 @@ class Paddle {
   void MoveToCenter();
 };
 
-#endif  // PADDLE_H
+#endif  // !PADDLE_H

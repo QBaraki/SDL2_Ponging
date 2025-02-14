@@ -15,4 +15,4 @@ class Game {
   void InitGameLoop();
 };
 
-#endif  // GAME_H
+#endif  // !GAME_H
