@@ -19,8 +19,8 @@ Vec2d& Vec2d::operator+=(const Vec2d& other) {
   return *this;
 }
 
-Vec2d Vec2d::operator*(const Vec2d& other) {
-  return Vec2d(x * other.x, y * other.y);
+Vec2d Vec2d::operator*(const float& other) {
+  return Vec2d(x * other, y * other);
 }
 
 Vec2d& Vec2d::operator*=(const Vec2d& other) {

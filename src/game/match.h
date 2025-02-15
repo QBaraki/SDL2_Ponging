@@ -6,10 +6,13 @@
 #include <vector>
 
 #include "game/player.h"
+#include "entities/ball.h"
 
 class Match {
   SDL_Renderer* renderer;
   std::vector<Player*> players;
+  Ball ball = Ball(Vec2d(), 10);
+  float speed;
 
  public:
   Match(SDL_Renderer* renderer_);

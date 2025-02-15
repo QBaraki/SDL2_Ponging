@@ -10,7 +10,7 @@ class Vec2d {
 
   Vec2d operator+(const Vec2d& other);
   Vec2d& operator+=(const Vec2d& other);
-  Vec2d operator*(const Vec2d& other);
+  Vec2d operator*(const float& other);
   Vec2d& operator*=(const Vec2d& other);
 };
 
