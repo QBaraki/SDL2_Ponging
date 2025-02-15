@@ -50,12 +50,18 @@ void Match::Update(float delta_time) {
     case 1: {
       std::cout << "Collided with left player.\n";
       speed += 0.05f;
+      if (speed > 3.0f)
+        speed = 3.0f;
+      // std::cerr << "Speed: " << speed << '\n';
       ball.ChangeDirection(*players[0]->paddle, speed);
       break;
     }
     case 2: {
       std::cout << "Collided with right player.\n";
       speed += 0.05f;
+      if (speed > 3.0f)
+        speed = 3.0f;
+      // std::cerr << "Speed: " << speed << '\n';
       ball.ChangeDirection(*players[1]->paddle, speed);
       break;
     }
