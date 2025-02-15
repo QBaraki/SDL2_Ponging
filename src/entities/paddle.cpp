@@ -36,10 +36,10 @@ void Paddle::Update(float delta_time) {
 
 void Paddle::HandlingKeyDown(SDL_Event* event) {
   if (event->key.keysym.sym == key[0].binding) {          // Go up.
-    velocity = -kSpeed / (key[2].IsDown ? 2.5f : 1.0f);
+    velocity = -kSpeed;
     key[0].IsDown = true;
   } else if (event->key.keysym.sym == key[1].binding) {   // Go down.
-    velocity = kSpeed / (key[2].IsDown ? 2.5f : 1.0f);
+    velocity = kSpeed;
     key[1].IsDown = true;
   } else if (event->key.keysym.sym == key[2].binding) {   // Slow.
     key[2].IsDown = true;
@@ -57,9 +57,9 @@ void Paddle::HandlingKeyUp(SDL_Event* event) {
   if (!key[0].IsDown && !key[1].IsDown) {
     velocity = 0.0f;
   } else if (key[0].IsDown && !key[1].IsDown) {
-    velocity = -kSpeed / (key[2].IsDown ? 2.5f : 1.0f);
+    velocity = -kSpeed;
   } else if (!key[0].IsDown && key[1].IsDown) {
-    velocity = kSpeed / (key[2].IsDown ? 2.5f : 1.0f);
+    velocity = kSpeed;
   }
 }
 
