@@ -49,7 +49,7 @@ void Match::Update(float delta_time) {
     }
     case 1: {
       std::cout << "Collided with left player.\n";
-      speed += 0.5f;
+      speed += 0.05f;
       ball.ChangeDirection(*players[0]->paddle, speed);
       break;
     }
