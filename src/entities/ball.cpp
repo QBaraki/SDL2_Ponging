@@ -26,7 +26,7 @@ void Ball::Update(float delta_time) {
   position += velocity * delta_time;
   if (position.y < 0) {
     velocity.y = std::fabs(velocity.y);
-  } else if (position.y > WINDOW_HEIGHT) {
+  } else if (position.y + size > WINDOW_HEIGHT) {
     velocity.y = -std::fabs(velocity.y);
   }
 }
