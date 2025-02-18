@@ -9,8 +9,7 @@ void RendererUtils::DrawNet(SDL_Renderer* renderer, int window_width, int window
     }
     if (current == 15) {
       current = 0;
-    }
-    else {
+    } else {
       current++;
     }
   }
