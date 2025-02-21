@@ -25,18 +25,21 @@ message(STATUS "SDL2_LIBRARY_DIRS: ${SDL2_LIBRARY_DIRS}")
 
 add_executable(Ponging ${PROJECT_SOURCE_DIR}/app/main.cpp ${cpp_files})
 
-target_link_libraries(Ponging
-    PRIVATE
-    ${SDL2_LIBRARIES}
-    SDL2_ttf::SDL2_ttf
+target_link_libraries(Ponging PRIVATE
+    $<TARGET_NAME_IF_EXISTS:SDL2::SDL2main>
+    $<IF:$<TARGET_EXISTS:SDL2::SDL2>,SDL2::SDL2,SDL2::SDL2-static>
+    $<IF:$<TARGET_EXISTS:SDL2_ttf::SDL2_ttf>,SDL2_ttf::SDL2_ttf,SDL2_ttf::SDL2_ttf-static>
 )
 
-#if (WIN32)
-#    add_custom_command(
-#        TARGET ${PROJECT_NAME} POST_BUILD
-#        COMMAND ${CMAKE_COMMAND} -E copy_if_different
-#        $<TARGET_FILE:SDL2::SDL2>
-#        $<TARGET_FILE_DIR:${PROJECT_NAME}>
-#        VERBATIM
-#    )
-#endif()
+file(COPY assets DESTINATION ${OUTPUT_DIR})
+file(COPY assets DESTINATION ${CMAKE_BINARY_DIR})
+
+if (WIN32)
+    add_custom_command(
+        TARGET ${PROJECT_NAME} POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        $<TARGET_FILE:SDL2::SDL2>
+        $<TARGET_FILE_DIR:${PROJECT_NAME}>
+        VERBATIM
+    )
+endif()
