@@ -2,7 +2,7 @@
 
 ## Prerequisite
 
-- CMake (version 3.3 or higher)
+- CMake (version 3.1 or higher)
 - vcpkg
 
 ## Build
